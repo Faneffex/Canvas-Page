@@ -4,33 +4,80 @@ body {
 
 .category {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+    align-items: flex-start; /* Changed */
+    justify-content: flex-start; /* Changed */
+    padding: 20px;
+    margin-top: 10px;
     border: 1px solid #6c757d;
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative; /* Added */
+    width: 50%; /* Added */
 }
 
 .category .arrow {
     transition: all 0.3s ease;
+    position: absolute; /* Added */
+    right: 10px; /* Added */
+    font-size: 40px;
+    top: 50%; /* Added */
+    transform: translateY(-50%); /* Added */
+    color: orange;
+}
+
+.category.open .arrow {
+    top: 10px; /* Added */  
+    right: 10px;
+    transform: translateY(0%) rotate(90deg); /* Added */
+    color: blue;
 }
 
 .category.open {
     flex-direction: column;
-}
-
-.category.open .arrow {
-    transform: rotate(-90deg);
+    width: 85%; /* Added */
 }
 
 .category .dropdown {
     display: none;
+    font-size: 20px;
     margin-top: 10px;
+    list-style-type:none;
+}
+
+.category .dropdown li {
+  border: 2px solid;
+  padding: 5px;
+  box-sizing: border-box; /* Added */
+}
+
+.category .dropdown li:nth-child(odd) {
+  border-color: blue;
+}
+
+.category .dropdown li:nth-child(even) {
+  border-color: orange;
 }
 
 .category.open .dropdown {
     display: block;
+}
+
+.banner {
+    background-color: orange ;
+    padding: 10px;
+    display: inline-block;
+}
+
+
+
+.blue-box {
+    background-color: #0049AB;
+    padding: 10px;
+    display: inline-block; 
+}
+
+.blue-box h1 {
+  color: white; /* Set the color to white */
 }
